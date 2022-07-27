@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.barrierfree_feedback_system.mapper.FeedbackMapper">
+
+    <resultMap id="feedbackInfo" type="com.example.barrierfree_feedback_system.bean.FeedbackInfo"/>
+
+    <insert id="saveFeedbackInfo" parameterType="com.example.barrierfree_feedback_system.bean.FeedbackInfo" >
+        insert into feedback_info(FeedbackContent, FeedbackLocation, FeedbackTime, FeedbackState)
+        values (#{content},#{location},#{time},#{state})
+   </insert>
+
+    <select id="getFeedbackInfo" resultMap="feedbackInfo">
+        select * from feedback_info
+    </select>
+
+</mapper>
