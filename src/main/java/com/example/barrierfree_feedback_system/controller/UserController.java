@@ -1,6 +1,11 @@
-package com.example.barrierfree_feddback_system.Api;
+package com.example.barrierfree_feedback_system.controller;
 
 
+import com.example.barrierfree_feedback_system.common.Result;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
@@ -23,9 +28,9 @@ public class UserController {
             @ApiImplicitParam(dataType = "string",name = "password", value = "用户登录密码",required = true)
     })
     @GetMapping("/login")
-    public ResultVO login(@RequestParam("username") String name,
+    public Result login(@RequestParam("username") String name,
                           @RequestParam(value = "password") String pwd){
-        ResultVO resultVO = userService.checkLogin(name, pwd);
+        Result resultVO = userService.checkLogin(name, pwd);
         logger.info(resultVO.getMsg());
         return resultVO;
     }
@@ -38,8 +43,8 @@ public class UserController {
             @ApiImplicitParam(dataType = "string",name = "password", value = "用户注册密码",required = true)
     })
     @PostMapping("/regist")
-    public ResultVO regist(@RequestBody Users user){
-        ResultVO resultVO = userService.userResgit(user.getUsername(), user.getPassword());
+    public Result regist(@RequestBody Users user){
+        Result resultVO = userService.userResgit(user.getUsername(), user.getPassword());
         return resultVO;
     }
 
