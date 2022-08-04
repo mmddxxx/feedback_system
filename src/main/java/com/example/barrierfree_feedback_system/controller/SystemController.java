@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/feedbackSystem")
 public class SystemController {
@@ -42,7 +44,7 @@ public class SystemController {
      */
     @RequestMapping(value = "getFeedbackSystem", method = RequestMethod.POST)
     public Result<?> getFeedbackSystem() {
-        feedbackService.getFeedbackInfo();
-        return Result.success();
+        List<FeedbackInfo> feedbackInfoList = feedbackService.getFeedbackInfo();
+        return Result.success(feedbackInfoList);
     }
 }

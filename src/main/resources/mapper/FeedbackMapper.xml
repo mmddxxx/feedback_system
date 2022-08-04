@@ -10,7 +10,7 @@
    </insert>
 
     <select id="getFeedbackInfo" resultMap="feedbackInfo">
-        select * from feedback_info
+        select FeedbackId as id, FeedbackContent as content, FeedbackLocation as location, FeedbackTime as time, FeedbackState as state from feedback_info
     </select>
 
 </mapper>

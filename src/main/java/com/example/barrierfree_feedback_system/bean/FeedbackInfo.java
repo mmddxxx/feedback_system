@@ -48,4 +48,15 @@ public class FeedbackInfo {
     public void setState(int state) {
         this.state = state;
     }
+
+//    @Override
+//    public FeedbackInfo clone() {  //用处：深拷贝一个对象，源码的clone是浅拷贝
+//        FeedbackInfo feedbackInfo = new FeedbackInfo();
+//        feedbackInfo.setId(id);
+//        feedbackInfo.setLocation(location);
+//        feedbackInfo.setContent(content);
+//        feedbackInfo.setTime(time);
+//        feedbackInfo.setState(state);
+//        return feedbackInfo;
+//    }
 }
