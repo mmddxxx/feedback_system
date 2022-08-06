@@ -1,9 +1,13 @@
-package com.example.barrierfree_feedback_system.common;
+package com.example.barrierfree_feedback_system.common.vo;
 
 public class Result<T> {
     private String code;
     private String msg;
     private T data;
+
+    public Result(int no, String s, Object o) {
+
+    }
 
     public String getCode() {
         return code;

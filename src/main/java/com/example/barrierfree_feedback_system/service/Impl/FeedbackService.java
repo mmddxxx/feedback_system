@@ -1,7 +1,7 @@
-package com.example.barrierfree_feedback_system.service;
+package com.example.barrierfree_feedback_system.service.Impl;
 
 import com.example.barrierfree_feedback_system.bean.FeedbackInfo;
-import com.example.barrierfree_feedback_system.mapper.FeedbackMapper;
+import com.example.barrierfree_feedback_system.mapper.dao.FeedbackMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

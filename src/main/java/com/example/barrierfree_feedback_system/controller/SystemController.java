@@ -1,11 +1,10 @@
 package com.example.barrierfree_feedback_system.controller;
 
 
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.example.barrierfree_feedback_system.bean.FeedbackInfo;
-import com.example.barrierfree_feedback_system.common.Result;
-import com.example.barrierfree_feedback_system.service.FeedbackService;
+import com.example.barrierfree_feedback_system.common.vo.Result;
+import com.example.barrierfree_feedback_system.service.Impl.FeedbackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

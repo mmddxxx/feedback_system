@@ -1,6 +1,6 @@
 
 
-package com.example.barrierfree_feedback_system.mapper;
+package com.example.barrierfree_feedback_system.mapper.dao;
 
 import com.example.barrierfree_feedback_system.bean.FeedbackInfo;
 import org.springframework.stereotype.Repository;

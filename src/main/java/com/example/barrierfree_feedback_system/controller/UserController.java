@@ -1,7 +1,9 @@
 package com.example.barrierfree_feedback_system.controller;
 
 
-import com.example.barrierfree_feedback_system.common.Result;
+import com.example.barrierfree_feedback_system.bean.Users;
+import com.example.barrierfree_feedback_system.common.vo.Result;
+import com.example.barrierfree_feedback_system.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -20,7 +22,7 @@ public class UserController {
 
     @Resource
     private UserService userService;
-    private Logger logger = LoggerFactory.getLogger(UserController.class);
+//    private Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @ApiOperation("用户登录接口")
     @ApiImplicitParams({
@@ -31,7 +33,7 @@ public class UserController {
     public Result login(@RequestParam("username") String name,
                           @RequestParam(value = "password") String pwd){
         Result resultVO = userService.checkLogin(name, pwd);
-        logger.info(resultVO.getMsg());
+//        logger.info(resultVO.getMsg());
         return resultVO;
     }
 
