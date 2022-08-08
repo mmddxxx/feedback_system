@@ -5,12 +5,16 @@
     <resultMap id="feedbackInfo" type="com.example.barrierfree_feedback_system.bean.FeedbackInfo"/>
 
     <insert id="saveFeedbackInfo" parameterType="com.example.barrierfree_feedback_system.bean.FeedbackInfo" >
-        insert into feedback_info(FeedbackContent, FeedbackLocation, FeedbackTime, FeedbackState)
+        insert into feedback_info(content, location, time, state)
         values (#{content},#{location},#{time},#{state})
    </insert>
 
     <select id="getFeedbackInfo" resultMap="feedbackInfo">
         select FeedbackId as id, FeedbackContent as content, FeedbackLocation as location, FeedbackTime as time, FeedbackState as state from feedback_info
+    </select>
+
+    <select id="getFeedbackInfoById" resultMap="feedbackInfo">
+        select * from feedback_info where id = #{id}
     </select>
 
 </mapper>

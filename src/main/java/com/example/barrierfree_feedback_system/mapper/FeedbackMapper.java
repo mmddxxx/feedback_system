@@ -14,4 +14,6 @@ public interface FeedbackMapper {
 
     void saveFeedbackInfo(FeedbackInfo feedbackInfo);
     List<FeedbackInfo> getFeedbackInfo();
+
+    FeedbackInfo getFeedbackInfoById(int id);
 }

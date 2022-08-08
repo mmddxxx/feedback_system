@@ -47,4 +47,14 @@ public class SystemController {
         List<FeedbackInfo> feedbackInfoList = feedbackService.getFeedbackInfo();
         return Result.success(feedbackInfoList);
     }
+
+    /**
+     * 获取反馈byId
+     * @return
+     */
+    @RequestMapping(value = "getFeedbackInfoById", method = RequestMethod.POST)
+    public Result<?> getFeedbackInfoById(@RequestBody JSONObject jsonObject) {
+        FeedbackInfo feedbackInfo = feedbackService.getFeedbackInfoById(jsonObject.getInteger("id"));
+        return Result.success(feedbackInfo);
+    }
 }

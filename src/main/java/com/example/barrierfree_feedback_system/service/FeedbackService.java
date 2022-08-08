@@ -25,4 +25,8 @@ public class FeedbackService {
     public List<FeedbackInfo> getFeedbackInfo() {
         return feedbackMapper.getFeedbackInfo();
     }
+
+    public FeedbackInfo getFeedbackInfoById(int id) {
+        return feedbackMapper.getFeedbackInfoById(id);
+    }
 }
