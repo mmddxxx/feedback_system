@@ -17,12 +17,12 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("/user")
 @Api(value = "提供用户的登录和注册接口",tags = "用户管理")
-@CrossOrigin
+//@CrossOrigin
 public class UserController {
 
     @Resource
     private UserService userService;
-//    private Logger logger = LoggerFactory.getLogger(UserController.class);
+    private Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @ApiOperation("用户登录接口")
     @ApiImplicitParams({
@@ -33,7 +33,7 @@ public class UserController {
     public Result login(@RequestParam("username") String name,
                           @RequestParam(value = "password") String pwd){
         Result resultVO = userService.checkLogin(name, pwd);
-//        logger.info(resultVO.getMsg());
+        logger.info(resultVO.getMsg());
         return resultVO;
     }
 
