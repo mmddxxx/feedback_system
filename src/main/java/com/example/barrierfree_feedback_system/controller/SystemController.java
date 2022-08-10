@@ -22,18 +22,29 @@ public class SystemController {
     FeedbackService feedbackService;
 
 
+//    /**
+//     * 保存反馈
+//     * @param jsonObject
+//     * @return
+//     */
+//    @RequestMapping(value = "saveFeedbackInfo", method = RequestMethod.POST)
+//    public Result<?> saveFeedbackSystem(@RequestBody JSONObject jsonObject) {
+//        FeedbackInfo feedbackInfo = new FeedbackInfo();
+//        feedbackInfo.setLocation(jsonObject.getString("location"));
+//        feedbackInfo.setContent(jsonObject.getString("content"));
+//        feedbackInfo.setTime(jsonObject.getString("time"));
+//        feedbackInfo.setState(0);
+//        feedbackService.saveFeedbackInfo(feedbackInfo);
+//        return Result.success();
+//    }
+
     /**
      * 保存反馈
-     * @param jsonObject
+     * @param
      * @return
-     */
-    @RequestMapping(value = "saveFeedbackSystem", method = RequestMethod.POST)
-    public Result<?> saveFeedbackSystem(@RequestBody JSONObject jsonObject) {
-        FeedbackInfo feedbackInfo = new FeedbackInfo();
-        feedbackInfo.setLocation(jsonObject.getString("location"));
-        feedbackInfo.setContent(jsonObject.getString("content"));
-        feedbackInfo.setTime(jsonObject.getString("time"));
-        feedbackInfo.setState(0);
+//     */
+    @RequestMapping(value = "saveFeedbackInfo", method = RequestMethod.POST)
+    public Result<?> saveFeedbackSystem(@RequestBody FeedbackInfo feedbackInfo) {
         feedbackService.saveFeedbackInfo(feedbackInfo);
         return Result.success();
     }
@@ -42,7 +53,7 @@ public class SystemController {
      * 获取反馈
      * @return
      */
-    @RequestMapping(value = "getFeedbackSystem", method = RequestMethod.POST)
+    @RequestMapping(value = "getFeedbackInfo", method = RequestMethod.POST)
     public Result<?> getFeedbackSystem() {
         List<FeedbackInfo> feedbackInfoList = feedbackService.getFeedbackInfo();
         return Result.success(feedbackInfoList);

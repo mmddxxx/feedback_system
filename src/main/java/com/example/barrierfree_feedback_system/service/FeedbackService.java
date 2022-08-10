@@ -19,14 +19,17 @@ public class FeedbackService {
     FeedbackMapper feedbackMapper;
 
     public void saveFeedbackInfo(FeedbackInfo feedbackInfo) {
-        feedbackMapper.saveFeedbackInfo(feedbackInfo);
+//        feedbackMapper.saveFeedbackInfo(feedbackInfo);
+        feedbackMapper.insert(feedbackInfo);
     }
 
     public List<FeedbackInfo> getFeedbackInfo() {
-        return feedbackMapper.getFeedbackInfo();
+//        return feedbackMapper.getFeedbackInfo();
+        return feedbackMapper.selectList(null);
     }
 
     public FeedbackInfo getFeedbackInfoById(int id) {
-        return feedbackMapper.getFeedbackInfoById(id);
+//        return feedbackMapper.getFeedbackInfoById(id);
+        return feedbackMapper.selectById(id);
     }
 }

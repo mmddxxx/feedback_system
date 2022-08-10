@@ -1,7 +1,9 @@
 package com.example.barrierfree_feedback_system.bean;
 
 
+import com.baomidou.mybatisplus.annotation.TableName;
 
+@TableName("feedback_info")
 public class FeedbackInfo {
 
     int id; //反馈信息id
